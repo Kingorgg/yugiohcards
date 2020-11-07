@@ -1,3 +1,6 @@
 __pycache__
 .vscode
 example_ygopro.py
+build
+dist
+ygoprodeck.egg-info

@@ -1,4 +1,4 @@
-# yugiohcards
+# YGOProDeck
 
 For more information on the API, please visit https://db.ygoprodeck.com/api-guide/
 
@@ -13,16 +13,21 @@ This is intended to be an easy to use wrapper for python projects.
 
 ## Example on how to use this API Wrapper
 
-### Import YGOProDeckAPI
+### Install YGOProDeck with pip
+```
+pip install ygoprodeck
+```
+
+### Import YGOProDeck
 
 ```python
 from ygoprodeck import *
 ```
 
-### Initiate YGOProDeckAPI
+### Initiate YGOPro
 
 ```python
-ygo = YGOProDeckAPI()
+ygo = YGOPro()
 ```
 
 ### get_cards()
