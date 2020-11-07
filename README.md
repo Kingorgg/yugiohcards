@@ -5,11 +5,11 @@ For more information on the API, please visit https://db.ygoprodeck.com/api-guid
 This is intended to be an easy to use wrapper for python projects.
 
 ## Requirements
-* Python 3+
-* requests
-* urllib3
-* xml.etree - ElementTree
-* json
+* certifi==2020.6.20
+* chardet==3.0.4
+* idna==2.10
+* requests==2.24.0
+* urllib3==1.25.11
 
 ## Example on how to use this API Wrapper
 
