@@ -35,4 +35,4 @@ dark_magician = ygo.get_cards(name='Dark Magician')
 print(dark_magician)
 
 limit_reverse_image = ygo.get_card_image(id=27551)
-print(link_reverse_image)
+print(limit_reverse_image)

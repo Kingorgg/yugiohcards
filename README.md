@@ -16,7 +16,7 @@ This is intended to be an easy to use wrapper for python projects.
 ### Import YGOProDeckAPI
 
 ```python
-from ygoprodeck import
+from ygoprodeck import *
 ```
 
 ### Initiate YGOProDeckAPI
