@@ -170,3 +170,18 @@ Retrieves a url for a smaller card image, based on an `id` provided. Images are 
 ```python
 ygo.get_card_image_small(id=27551)
 ```
+
+## Contributing
+
+### Issue Tracker
+
+You can find outstanding issues on the [GitHub Issue Tracker](https://github.com/kingorgg/yugiohcards/issues).
+
+### Pull Requests
+
+* Each pull request should contain only one new feature or improvement.
+* Pull requests should be submitted to the correct version branch ie [main](https://github.com/kingorgg/yugiohcards/tree/main)
+
+## License
+
+YGOProDeck is under the MIT License, you can view the license [here](https://github.com/kingorgg/yugiohcards/blob/main/LICENSE).
