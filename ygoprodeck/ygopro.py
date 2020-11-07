@@ -29,9 +29,9 @@ import requests
 import urllib.parse
 
 from xml.etree import ElementTree
-from ygo_urls import *
+from .ygo_urls import YGOURLs
 
-class YGOProDeckAPI:
+class YGOPro:
     ''' Python API Wrapper for YGOProDeck '''
     def __init__(self, response_format='json'):
         self.format = response_format
