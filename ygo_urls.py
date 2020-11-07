@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 '''
 MIT License
 
@@ -26,7 +24,7 @@ SOFTWARE.
 Data Source provided by https://db.ygoprodeck.com/api-guide/
 '''
 
-class URLs:
+class YGOURLs:
     ''' URL Class that has all the endpoints for the YGOProDeck API.'''
     def __init__(self):
         self.base_url = 'https://db.ygoprodeck.com/api/v7/'
@@ -46,11 +44,15 @@ class URLs:
         # Check DB Version
         self.check_db_version = 'checkDBVer.php'
 
+        # Card Images
+        self.card_img = 'https://storage.googleapis.com/ygoprodeck.com/pics/{id}.jpg'.format(id="{id}")
+        self.card_img_small = 'https://storage.googleapis.com/ygoprodeck.com/pics_small/{id}.jpg'.format(id="{id}")
+
     def base_url(self):
         ''' Return Base URL. '''
         return self.base_url
 
-    def all_cards_url(self):
+    def card_url(self):
         ''' Return All Cards URL. '''
         return self.base_url + self.all_cards
     
@@ -60,7 +62,7 @@ class URLs:
 
     def cards_set_info_url(self):
         ''' Return Card Set Info URL. '''
-        return self.base_url + self.card_set_info
+        return self.base_url + self.cards_set_info
 
     def all_card_archetypes_url(self):
         ''' Return All Card Archetypes URL. '''
@@ -69,3 +71,11 @@ class URLs:
     def check_db_version_url(self):
         ''' Return Check DB Version URL. '''
         return self.base_url + self.check_db_version
+
+    def get_card_image_url(self):
+        ''' Return Card Image URL. '''
+        return self.card_img
+    
+    def get_card_image_small_url(self):
+        ''' Return Small Card Image URL. '''
+        return self.card_img_small
