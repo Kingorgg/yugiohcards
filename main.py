@@ -27,38 +27,43 @@ Data Source provided by https://db.ygoprodeck.com/api-guide/
 '''
 
 import csv
-import json
-import requests
 
-data = requests.get('https://db.ygoprodeck.com/api/v7/cardinfo.php').json()
+from ygoprodeck import *
 
-with open('yugioh_cards.csv', 'w', newline='', encoding='utf8') as csv_file:
-    fieldnames = ['name', 'type', 'set_name', 'set_code', 'set_rarity']
-    csvwriter = csv.DictWriter(csv_file, fieldnames)
+if __name__ == '__main__':
+    ygo = YGOProDeckAPI(response_format='json')
 
-    csvwriter.writeheader()
-    for row in data['data']:
-        if 'card_sets' in row:
-            sets_data = row['card_sets']
-            for sets in sets_data:
+    print (ygo.get_database_version())
+
+    data = ygo.get_cards()
+
+    with open('yugioh_cards.csv', 'w', newline='', encoding='utf8') as csv_file:
+        fieldnames = ['name', 'type', 'set_name', 'set_code', 'set_rarity']
+        csvwriter = csv.DictWriter(csv_file, fieldnames)
+
+        csvwriter.writeheader()
+        for row in data['data']:
+            if 'card_sets' in row:
+                sets_data = row['card_sets']
+                for sets in sets_data:
+                    csvwriter.writerow(
+                        {
+                            'name': row['name'],
+                            'type': row['type'],
+                            'set_name': sets['set_name'],
+                            'set_code': sets['set_code'],
+                            'set_rarity': sets['set_rarity'] + " " + sets['set_rarity_code']
+                        }
+                    )
+            else:
                 csvwriter.writerow(
-                    {
-                        'name': row['name'],
-                        'type': row['type'],
-                        'set_name': sets['set_name'],
-                        'set_code': sets['set_code'],
-                        'set_rarity': sets['set_rarity'] + " " + sets['set_rarity_code']
-                    }
-                )
-        else:
-            csvwriter.writerow(
-                    {
-                        'name': row['name'],
-                        'type': row['type'],
-                        'set_name': None,
-                        'set_code': None,
-                        'set_rarity': None
-                    }
-                )
+                        {
+                            'name': row['name'],
+                            'type': row['type'],
+                            'set_name': None,
+                            'set_code': None,
+                            'set_rarity': None
+                        }
+                    )
 
-    csv_file.close()
+        csv_file.close()
