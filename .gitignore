@@ -4,3 +4,4 @@ example_ygopro.py
 build
 dist
 ygoprodeck.egg-info
+env
